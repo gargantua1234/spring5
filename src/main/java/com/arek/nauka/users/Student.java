@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by Arek on 01.11.2017.
  */
-@Component
+
 public class Student {
     private int age;
     private String name;

@@ -12,6 +12,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <spring.version>5.0.1.RELEASE</spring.version>
+        <aspectjweaver.version>1.8.11</aspectjweaver.version>
     </properties>
 
     <dependencies>
@@ -19,6 +20,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver.version}</version>
         </dependency>
     </dependencies>
 
