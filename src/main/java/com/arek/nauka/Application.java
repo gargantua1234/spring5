@@ -25,6 +25,9 @@ public class Application {
         Student student = context.getBean(Student.class);
         student.getAge();
 
+        student.raiseException();
+
+
 
     }
 }

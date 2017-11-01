@@ -29,4 +29,9 @@ public class Student {
 
     }
 
+    public void raiseException(){
+        System.out.println("Some Error");
+        throw new IllegalArgumentException("illegal argument");
+    }
+
 }
