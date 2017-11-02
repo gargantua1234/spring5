@@ -24,9 +24,11 @@ public class Application {
         ApplicationContext context = new AnnotationConfigApplicationContext(Application.class);
         Student student = context.getBean(Student.class);
         student.getAge();
+        student.getName();
 
-        student.raiseException();
-
+        try {
+            student.raiseException();
+        }catch(IllegalArgumentException e){}
 
 
     }

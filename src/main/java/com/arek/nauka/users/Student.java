@@ -1,6 +1,6 @@
 package com.arek.nauka.users;
 
-import org.springframework.stereotype.Component;
+import com.arek.nauka.aspects.Loggable;
 
 /**
  * Created by Arek on 01.11.2017.
@@ -10,10 +10,12 @@ public class Student {
     private int age;
     private String name;
 
+
     public void setAge(int age){
         this.age = age;
     }
 
+    @Loggable
     public int getAge(){
         System.out.println("Age: " + age);
         return age;

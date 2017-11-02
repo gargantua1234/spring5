@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn"> <!-- status okresla od jakiego poziomu wypisywac logi wewnetrzne LOG4J -->
+    <Appenders>
+        <File name="FILE" fileName="logs/student.log" append="true">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n">
+            </PatternLayout>
+        </File>
+        <Console name="STD_OUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n">
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.arek.nauka.aspects" level="debug" additivity="false"> <!--
+                                                 loger dla pakietu aspects wypisujacy logi od debug wzwyz
+                                                 additivity sprawia ze logi nie sa podwojnie wypisywane-->
+            <AppenderRef ref="STD_OUT" level="debug"/>    <!-- przypisanie appendera dla danego loggera-->
+            <AppenderRef ref="FILE" level="error"/>
+        </Logger>
+        <Root level="warn">         <!--logi projektowe (spring, aspectj itd) beda wypisywane od poziomu warning -->
+            <AppenderRef ref="FILE" level="error" />    <!-- tylko logi error i wzwyz z calego projektu beda zapisywane do pliku  -->
+            <!--<AppenderRef ref="STD_OUT"/>    &lt;!&ndash; pozostale logi projektu bedą wypisywane do consoli &ndash;&gt;+-->
+        </Root>
+    </Loggers>
+</Configuration>
