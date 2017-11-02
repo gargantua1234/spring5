@@ -1,0 +1,6 @@
+ERROR | 2017-11-02 14:47:50 | [main] aspects.Logging (Logging.java:40) - An error occurred: illegal argument
+ERROR | 2017-11-02 14:49:06 | [main] aspects.Logging (Logging.java:40) - An error occurred: illegal argument
+ERROR | 2017-11-02 14:49:31 | [main] aspects.Logging (Logging.java:40) - An error occurred: illegal argument
+ERROR | 2017-11-02 14:49:56 | [main] aspects.Logging (Logging.java:40) - An error occurred: illegal argument
+ERROR | 2017-11-02 14:50:47 | [main] aspects.Logging (Logging.java:40) - An error occurred: illegal argument
+ERROR | 2017-11-02 14:51:08 | [main] aspects.Logging (Logging.java:40) - An error occurred: illegal argument
