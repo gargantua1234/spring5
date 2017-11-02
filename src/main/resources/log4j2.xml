@@ -6,7 +6,8 @@
             </PatternLayout>
         </File>
         <Console name="STD_OUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n">
+            <PatternLayout pattern="%highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow,
+            INFO=green, DEBUG=blue} | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n">
             </PatternLayout>
         </Console>
     </Appenders>
