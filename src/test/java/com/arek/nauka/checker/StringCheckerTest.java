@@ -1,11 +1,8 @@
 package com.arek.nauka.checker;
 
 import org.junit.jupiter.api.*;
+
 import static org.assertj.core.api.Assertions.assertThat;
-
-//import static org.junit.jupiter.api.Assertions.assertFalse;
-
-//import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 @Tag("Unit tests")
