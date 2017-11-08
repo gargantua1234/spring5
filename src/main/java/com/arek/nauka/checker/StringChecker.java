@@ -5,9 +5,9 @@ package com.arek.nauka.checker;
  */
 class StringChecker {
 
-    boolean isPalindrome(String word){
+    boolean isPalindrome(String word) throws IllegalArgumentException{
         if(isEmptyOrNull(word))
-            return false;
+            throw new IllegalArgumentException("You can not check the empty word");
 
         String original = getCharSequence(word);
         String reversed = reverseWord(original);
@@ -30,4 +30,6 @@ class StringChecker {
                 .reverse()
                 .toString();
     }
+
+
 }

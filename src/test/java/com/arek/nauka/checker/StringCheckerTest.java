@@ -4,8 +4,9 @@ import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Tag("Unit tests")
+
 @DisplayName("StringChecker tests")
 class StringCheckerTest {
 
@@ -22,22 +23,15 @@ class StringCheckerTest {
         System.out.println("Before each test");
     }
 
+    @AfterEach
+    void afterEachInvocation(){
+        System.out.println("After each test");
+    }
+
     @AfterAll
     static void tearDown(){
         checker = null;
         System.out.println("Cleaning");
-    }
-
-    @Test
-    @DisplayName("For empty word should return false")
-    void testIsNotAPalindromeIfWordIsEmpty(){
-        assertThat(checker.isPalindrome("")).isEqualTo(false);
-    }
-
-    @Test
-    @DisplayName("Null object is not a palindrome")
-    void testFalseIfWordIsNull(){
-       assertThat(checker.isPalindrome(null)).isEqualTo(false);
     }
 
     @Test
@@ -70,7 +64,7 @@ class StringCheckerTest {
 
     @Test
     @DisplayName("Non alphanumeric chars should be ignored")
-    void testShouldIgnorNonAlphanumericCharsInComparison(){
+    void testShouldIgnoreNonAlphanumericCharsInComparison(){
         assertAll("palindromes",
                 () -> assertThat(checker
                         .isPalindrome("Amore, Roma."))
@@ -88,4 +82,36 @@ class StringCheckerTest {
                 );
     }
 
+    @Test
+    @DisplayName("For empty word the method should throw an exception")
+    @Tag("exception")
+    void testExceptionThrowsIfWordIsEmpty(){
+        Throwable exception = assertThrows(IllegalArgumentException.class,
+                ()-> checker.isPalindrome(""));
+        assertThat(exception.getMessage()).isEqualTo("You can not check the empty word");
+    }
+
+
+    @Test
+    @DisplayName("For null word method should throw an illegal argument wxception")
+    @Tag("exception")
+    void testExceptionThrowsIfWordIsNull(){
+        Throwable exception = assertThrows(IllegalArgumentException.class,
+                ()-> checker.isPalindrome(null));
+        assertThat(exception.getMessage()).isEqualTo("You can not check the empty word");
+    }
+
+    @Test
+    @Disabled           //wylaczanie testów
+    @DisplayName("This test is disabled")
+    void testSkippedTest(){
+        System.out.println("This test is skipped");
+    }
+    
+    @DisplayName("Repeated test")
+    @RepeatedTest(value = 5, name = "{displayName}" +
+            " - repetition {currentRepetition} of {totalRepetitions}")  /*powtarzanie testów,  value - liczba powtórzeń */
+    void testRepeated(){
+        assertThat(checker.isPalindrome("kajak")).isTrue();
+    }
 }
