@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
 @RunWith(JUnitPlatform.class)   //wskazanie klasy wykonujacej testy
 @SelectPackages("com.arek.nauka.checker") //wskazanie klas testujacych ktore beda uruchomione
 @ExcludeTags("exception")   //wskazanie ze metody tesowe znaczone tagiem "exception" beda pominiete przy wykonywaniu
-public class StringCheckerTestNoException {
+public class PalindromeCheckerTestWithNoException {
 }

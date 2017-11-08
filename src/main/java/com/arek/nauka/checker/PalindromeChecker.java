@@ -3,7 +3,7 @@ package com.arek.nauka.checker;
 /**
  * Created by Arek on 02.11.2017.
  */
-class StringChecker {
+class PalindromeChecker {
 
     boolean isPalindrome(String word) throws IllegalArgumentException{
         if(isEmptyOrNull(word))

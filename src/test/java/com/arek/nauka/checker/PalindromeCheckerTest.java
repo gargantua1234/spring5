@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-@DisplayName("StringChecker tests")
-class StringCheckerTest {
+@DisplayName("PalindromeChecker tests")
+class PalindromeCheckerTest {
 
-    private static StringChecker checker;
+    private static PalindromeChecker checker;
 
     @BeforeAll
     static void setup(){
-        checker = new StringChecker();
+        checker = new PalindromeChecker();
         System.out.println("Setup");
     }
 
@@ -107,7 +107,7 @@ class StringCheckerTest {
     void testSkippedTest(){
         System.out.println("This test is skipped");
     }
-    
+
     @DisplayName("Repeated test")
     @RepeatedTest(value = 5, name = "{displayName}" +
             " - repetition {currentRepetition} of {totalRepetitions}")  /*powtarzanie testów,  value - liczba powtórzeń */
